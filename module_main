@@ -1,0 +1,18 @@
+# Import External File as a Module
+# from module_file import *
+# import module_file
+# from module_file import *
+# from module_file import displayName
+import module_file as conqueror
+
+players = ["Matt","Grieze","Roberto"]
+
+def main():
+    greetPlayer()
+
+def greetPlayer():
+    for player in players:
+        conqueror.displayName(player)
+
+# Ignite the Program
+if __name__ == '__main__':main()
