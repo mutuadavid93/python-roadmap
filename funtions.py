@@ -75,3 +75,11 @@ def f3():
 # returnedValue = f1(f3) # i.e. f2
 # returnedValue()
 f3()
+
+# Lambda Function:
+# Anonymous single line function.
+double = lambda x, y : (x ** 2) / y
+
+print(double(50,5))
+
+print(__name__)
