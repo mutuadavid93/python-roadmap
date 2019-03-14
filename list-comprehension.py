@@ -28,4 +28,46 @@ def print_comprehension(collection):
     for x in collection: print(x, end = ' ')
     print()
 
+
+
+
+##########################
+#
+#   LIST COMPREHENSION
+#
+##########################
+
+# @Syntax:
+# [ expression for item in list if conditional ]
+
+# @Syntax II
+# *result*  = [*transform* *iteration* *filter*]
+#
+# the "filter" determines if the "transformation" will occur
+
+# Equivalent to:
+list = [9,5,6,8]
+res = []
+
+
+for item in list:
+    if item % 2 == 0:
+        res.append(item)
+
+results = [(item ** 2) for item in list if item % 2 == 0]
+new_list = [item for item in list]
+
+print(new_list)
+
+"""
+    Nested for loops in List Compression
+    
+    Trick Shot: Rewrite it in your head as Normal nested for loop Statements
+"""
+non_flat = [ [1,2,3], [4,5,6], [7,8] ]
+
+flat_list = [y for x in non_flat for y in x]
+
+print(flat_list)
+
 if __name__ == '__main__': main()

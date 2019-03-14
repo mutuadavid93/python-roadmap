@@ -25,6 +25,7 @@
     constructor - Provided by the runtime system to check the 
     existence of an instance initializer and call it if present.
 """
+from pprint import pprint as pp
 
 class Flight:
     pass
@@ -33,6 +34,12 @@ class Flight:
         self._number = flight_number
         self.validator(self._number)
         self._aicraft = aicraft
+
+        # Tuple Unpack Seating Plan
+        rows, seats = self._aicraft.seating_plan()
+        self._seating = [None] + [{letter: None for letter in seats} for _ in range(rows)]
+
+        pp(self._seating)
 
     def get_number(self):
         return self._number
@@ -70,6 +77,10 @@ class Aircraft:
         total_seats = self._num_rows * self._num_seats_per_row
         return total_seats
 
+    def seating_plan(self):
+        seat_letters = list('ABCD')
+        rows_seats = (self._num_rows, seat_letters)
+        return rows_seats
 
 """ 
     NB: Passed in Key Value pairs e.g. num_rows=157 
@@ -85,7 +96,7 @@ print('%d passengers onboard.' % (passengers_role))
 
 
 """ __init__() args must be passed into the class constructor """
-flight = Flight("yth78", Aircraft("890XJ",model="SKELDAR",num_rows=5,num_seats_per_row=2))
+flight = Flight("yth78", Aircraft("890XJ",model="SKELDAR",num_rows=2,num_seats_per_row=2))
 
 
 """ Invoking class methods """
