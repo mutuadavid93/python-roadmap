@@ -4,6 +4,7 @@ from datetime import date
 from datetime import time
 from datetime import datetime
 from datetime import timedelta
+import calendar
 
 
 ##########################
@@ -21,9 +22,10 @@ print("Day: {} Month: {} Year: {}"
       .format(today.day, today.month, today.year))
 
 # Week Day Number: i.e. index based
-week_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday", "Sunday"]
+# week_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday", "Sunday"]
+week_days = calendar.day_name
 weekday = today.weekday()
-print(f"Week Day {week_days[weekday]}")
+print(f"Today is on a {week_days[weekday]}")
 
 def print_date(message, date_object):
     print(f'{message} {date_object}')
