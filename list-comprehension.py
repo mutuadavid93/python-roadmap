@@ -70,4 +70,32 @@ flat_list = [y for x in non_flat for y in x]
 
 print(flat_list)
 
+
+
+##########################
+#
+#   SET COMPREHENSION
+#
+##########################
+
+phrase = "Rewrite it in your head as Normal nested for loop Statement"
+words = phrase.split(" ")
+
+words_length = {len(word) for word in words}
+
+print(words_length)
+
+
+
+###############################
+#
+#   DICTIONARY COMPREHENSION
+#
+###############################
+country_to_capital = {"Kenya": "Nairobi","Uganda": "Kampala"}
+
+capital_to_country = {capital:country for country, capital in country_to_capital.items()}
+
+print(capital_to_country)
+
 if __name__ == '__main__': main()

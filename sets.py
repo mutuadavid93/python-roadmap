@@ -1,4 +1,31 @@
-from decorators import padding
+"""
+    Immutability:
+        The Set Data Structure is Mutable but it's Elements are Immutable.
+
+    Similar:
+        Close to Dictionary assemblance but the Elements are Individuals
+        without Keys.
+
+    Empty Set:
+        Empty "{}" creates a Dictionary hence use the set() constructor.
+
+    Unordered:
+        Sets don't follow any order during output.
+"""
+
+# Can convert any data structure into a set:
+players_list = ["Lonzo", "Klay", "Steph", "Jrue", "Embiid", "Klay"]
+
+clean_list = set(players_list)
+
+# Adding multiple elements from another Set
+new_set = set(["Tatum"])
+new_set.update(["Green", "Smith"])
+
+# Check Membership/Containment
+isPresent = 'Present' if "Jrue" in clean_list else 'Absent'
+
+print(new_set)
 
 # Sets are like Lists which DO NOT ALLOW DUPLICATE Elements
 
@@ -24,6 +51,9 @@ set_definition.update(my_set)
 # Copy one set into another without changing the original set
 set_copy = my_set.copy()
 set_copy.add("Goat")
+
+# The set() constructor can also be used to copy
+new_copy = set(my_set)
 
 print(f'Original Set: {my_set} and Copied Set: {set_copy}')
 
